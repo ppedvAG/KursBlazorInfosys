@@ -1,11 +1,13 @@
 using KursInfosys.Components;
+using KursInfosys.Components.Pages.Modul4;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<ToDoVM>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
