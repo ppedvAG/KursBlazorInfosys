@@ -8,6 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ToDoVM>();
+builder.Services.AddSingleton<ChatVM>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

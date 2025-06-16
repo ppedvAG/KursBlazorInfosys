@@ -1,0 +1,39 @@
+﻿@page "/todoV"
+@inject ToDoVM VM
+<h3>ToDo</h3>
+<div class="Container">
+
+
+    <div class="row">
+
+        <div class="col">
+
+
+            <ul class="list-group">
+                <li class="list-group-item  active">
+                    todo
+                </li>
+                <Virtualize Items="@VM.ToDo.todos" Context="item" OverscanCount="5" ItemSize="30">
+                    <ItemContent>
+                        <li class='list-group-item list-group-item-action @(item.completed ? "list-group-item-dark" : "")'>
+                            @item.todo
+                        </li>
+
+                    </ItemContent>
+                    <EmptyContent>
+                        <li>keune Daten</li>
+                    </EmptyContent>
+                </Virtualize>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+@code {
+    string eingabe = string.Empty;
+}
