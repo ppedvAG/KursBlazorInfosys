@@ -1,0 +1,26 @@
+﻿@page "/navi1"
+@page "/navi2"
+@inject NavigationManager NavigationManager
+<h3>Navi</h3>
+<a href="navi1">1</a><br />
+<a href="navi2">2</a>
+
+<br />
+<button @onclick="register">register </button>
+@code {
+
+    void register()
+    {
+        // Register the event handler for navigation events
+        NavigationManager.LocationChanged += NavigationManager_Navigating;
+    }
+   // TODO:Navigation abbrechen?
+
+
+    void NavigationManager_Navigating(object sender, LocationChangedEventArgs e)
+    {
+        Console.WriteLine("Navigating to: " + e.Location);
+        
+    }
+
+}
