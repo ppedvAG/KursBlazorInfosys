@@ -1,0 +1,13 @@
+﻿@page "/Hannes"
+@page "/Hannes/{id}/edit"
+
+http://ppedv.de/firma/123
+http://ppedv.de/firma/123/edit
+
+http://ppedv.de/firma //alle
+<h3>Hannes @id</h3>
+
+@code {
+    [Parameter]
+   public string  id { get; set; } 
+}
