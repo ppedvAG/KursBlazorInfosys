@@ -1,0 +1,28 @@
+﻿@page "/events"
+<h3>ComponentEevents</h3>
+<button class="btn btn-primary" @onclick="OnClick">Click me</button>
+
+@code {
+
+    void OnClick()
+    {
+        Console.WriteLine("Button clicked!");
+    }
+    protected override void OnInitialized()
+    {
+
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+       if (firstRender)
+        {
+            
+        }
+    }
+    protected override void OnParametersSet()
+    {
+        
+    }
+
+
+}
