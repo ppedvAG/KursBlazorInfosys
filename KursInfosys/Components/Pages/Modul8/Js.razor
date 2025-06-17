@@ -26,5 +26,7 @@
         //jsRuntime.InvokeVoidAsync("alert", "Hallo Welt");
        wert= await jsRuntime.InvokeAsync<string>("prompt", "titlezeile", "wert");
         jsRuntime.InvokeVoidAsync("eval", "document.title='Servas!'");
+
+        jsRuntime.InvokeVoidAsync("console.log", wert);
     }
 }
