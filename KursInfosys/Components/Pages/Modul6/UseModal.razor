@@ -1,0 +1,22 @@
+﻿@page "/modal"
+<h3>UseModal</h3>
+<Modalppedv Titel="Hello World" @ref="modal1" OnClick="speichern">
+    Eingabe <input class="form-control" @bind="eingabe" />
+</Modalppedv>
+<button type="button" class="btn btn-primary" @onclick="anzeigen">
+    Launch demo modal
+</button>
+
+@code {
+    Modalppedv modal1;
+    string eingabe;
+    void anzeigen()
+    {
+        modal1.Show();
+    }
+    void speichern()
+    {
+        eingabe = "";
+        modal1.Show();
+    }
+}
