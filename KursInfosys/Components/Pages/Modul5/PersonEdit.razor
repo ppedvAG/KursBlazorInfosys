@@ -1,0 +1,50 @@
+﻿@page "/person/edit/{Id:int}"
+@page "/p"
+<h3>PersonEdit</h3>
+<EditForm Model="VM" OnSubmit="save">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Vorname</label>
+        <div class="col-sm-10">
+            <InputText class="form-control" @bind-Value="VM.FirstName" />
+            <ValidationMessage For="@(() => VM.FirstName)"></ValidationMessage>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Vorname</label>
+        <div class="col-sm-10">
+            <InputTextppedv class="form-control" @bind-Value="VM.FirstName" />
+            <ValidationMessage For="@(() => VM.FirstName)"></ValidationMessage>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Größe</label>
+        <div class="col-sm-10">
+            <InputNumber class="form-control" @bind-Value="VM.Gross" />
+            <ValidationMessage For="@(() => VM.Gross)"></ValidationMessage>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Geburtsdatum</label>
+        <div class="col-sm-10">
+            <InputDate class="form-control" @bind-Value="VM.GebDat" />
+            <ValidationMessage For="@(() => VM.GebDat)"></ValidationMessage>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Speichern</button>
+    <ValidationSummary></ValidationSummary>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    Person VM = new Person();
+    void save(EditContext ctx)
+    {
+        // Save logic here
+        if (ctx.Validate())
+        {
+            
+        }
+    }
+}
