@@ -1,0 +1,21 @@
+﻿@page "/js2"
+@inject IJSRuntime jsRuntime    
+
+<h3>js2</h3>
+<button @onclick="clickAsync">js2</button>
+@wert
+@code {
+    string wert;
+    IJSObjectReference miniruntime;
+    protected override async Task OnInitializedAsync()
+    {
+       miniruntime= await jsRuntime.InvokeAsync<IJSObjectReference>("import", "./components/pages/modul8/js2.razor.js");
+    
+    }
+    async Task clickAsync()
+    {
+     
+        wert = await miniruntime.InvokeAsync<string>("showPrompt", "titlezeile", "wert");
+       
+    }
+}
