@@ -1,0 +1,8 @@
+﻿@page "/kunden/{Id}"
+
+<h3>KundenEdit</h3>
+@Id
+@code {
+    [Parameter]
+    public string Id { get; set; }
+}

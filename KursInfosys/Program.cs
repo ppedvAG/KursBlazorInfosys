@@ -1,5 +1,7 @@
 using KursInfosys.Components;
 using KursInfosys.Components.Pages.Modul4;
+using KursInfosys.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,10 @@ builder.Services.AddRazorComponents()
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ToDoVM>();
 builder.Services.AddSingleton<ChatVM>();
+builder.Services.AddDbContext<NorthwindContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Northwind"));
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
