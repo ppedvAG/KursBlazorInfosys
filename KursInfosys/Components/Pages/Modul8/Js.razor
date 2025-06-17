@@ -1,5 +1,5 @@
 ﻿@page "/js"
-
+@inject IJSRuntime jsRuntime
 <h3>Js</h3>
 <script>
     // This is a simple JavaScript function that can be used in the Blazor application.
@@ -17,6 +17,14 @@
         // window.ppedv();
         
 </script>
+@wert
+<button @onclick="clickAsync">js</button>
 @code {
+    string wert;
+    async Task clickAsync()
+    {
+        //jsRuntime.InvokeVoidAsync("alert", "Hallo Welt");
+       wert= await jsRuntime.InvokeAsync<string>("prompt", "titlezeile", "wert");
 
+    }
 }
