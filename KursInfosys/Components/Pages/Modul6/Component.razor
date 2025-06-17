@@ -1,0 +1,26 @@
+﻿<h3>Component</h3>
+<div @attributes=@Alles>
+    text @Casc1
+</div>
+<div>@ItemContent</div>
+<div>@EmptyContent</div>
+@code {
+    [Parameter]
+    [EditorRequired]
+    public int MyProperty2 { get; set; }
+
+    public int MyProperty { get; set; }
+
+    [Parameter(CaptureUnmatchedValues =true)]
+    public Dictionary<String,Object> Alles { get; set; }
+    [CascadingParameter]
+    public string Casc1 { get; set; }
+    [CascadingParameter(Name ="eins")]
+    public int Casc2 { get; set; }
+    // [Parameter]
+    // public RenderFragment ChildContent { get; set; }
+    [Parameter]
+     public RenderFragment ItemContent { get; set; }
+    [Parameter]
+    public RenderFragment EmptyContent { get; set; }
+}

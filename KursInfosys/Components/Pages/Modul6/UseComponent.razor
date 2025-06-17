@@ -1,0 +1,28 @@
+﻿@page "/c"
+<h3>UseComponent</h3>
+<CascadingValue Value='@("Hannes")'>
+    <CascadingValue Value="42" Name="eins">
+
+
+        <Component @ref="compi" MyProperty2="@antwort"
+                   style="background-color:yellow" hannes="hannes">
+            <ItemContent>
+                <h1>toller Code</h1>
+                <button class="btn btn-danger">text</button>
+            </ItemContent>
+            <EmptyContent></EmptyContent>
+
+        </Component>
+    </CascadingValue>
+</CascadingValue>
+@code {
+    Component compi;
+
+    int antwort = 10;
+    void Test()
+    {
+
+        compi.MyProperty = 42;
+
+    }
+}
